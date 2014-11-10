@@ -1,4 +1,5 @@
-var asteroid = Asteroids.asteroid = function (options) {
+(function () {
+var Asteroid = Asteroids.asteroid = function (options) {
   options.color = "#d3d3d3"; //gray
   options.radius = 10;
   options.vel = Asteroids.Util.randomVec();
@@ -7,4 +8,6 @@ var asteroid = Asteroids.asteroid = function (options) {
   // any extra arguments after...
 };
 
-asteroid.inherits(movingObject);
+Asteroid.inherits(movingObject);
+
+})();

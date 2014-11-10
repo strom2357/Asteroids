@@ -5,8 +5,7 @@ console.log("Helloworld");
     window.Asteroids = {};
   }
   
-  var movingObject = Asteroids.movingObject = function ( options )
-  {
+  var movingObject = Asteroids.movingObject = function ( options ) {
     this.pos = options.pos
     this.vel = options.vel;
     this.radius = options.radius;
@@ -37,4 +36,3 @@ console.log("Helloworld");
   
   
 })();
-

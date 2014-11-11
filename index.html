@@ -1,3 +1,36 @@
-<script src='./movingObject.js'></script>
-<script src='./util.js'></script>
-<script src='./asteroid.js'></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DrunkenCircles</title>
+
+    <style>
+      html, body, canvas {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="game-canvas"></canvas>
+    <script src='./util.js'></script>
+    <script src='./movingObject.js'></script>
+    <script src='./asteroid.js'></script>
+    <script src='./game.js'></script>
+    <script src='./gameView.js'></script>
+
+    <script>
+      var canvas = document.getElementById("game-canvas");
+      canvas.height = Asteroids.Game.DIM_X;
+      canvas.width = Asteroids.Game.DIM_Y;
+
+      var ctx = canvas.getContext("2d");
+      var game = new Asteroids.Game();
+      var gameView = new Asteroids.gameView(game, ctx);
+      gameView.start();
+    </script>
+  </body>
+</html>
+  
+
+

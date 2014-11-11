@@ -11,13 +11,20 @@
   
   var Util = Asteroids.Util = {};
   
-  Asteroid.Util.inherits = function(parent) {
+  Asteroids.Util.inherits = function(child, parent) {
+
     function Surrogate () {};
-    Surrogate.prototype = parent.prototype; 
-    this.prototype = new Surrogate(); 
+    Surrogate.prototype = parent.prototype;
+    child.prototype = new Surrogate();
   }
   
-  Asteroid.Util.randomVec = function() {
+  Function.prototype.inherits = function(parent) {
+    function Surrogate () {};
+    Surrogate.prototype = parent.prototype;
+    this.prototype = new Surrogate();
+  };
+  
+  Asteroids.Util.randomVec = function() {
     var vel = []
     
     vel[0] = Math.floor((Math.random() * 10) + 1); //random between 1 and 10;

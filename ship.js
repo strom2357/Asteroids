@@ -10,16 +10,17 @@
     this.prototype = new Surrogate();
   };
   
-  var Asteroid = Asteroids.Asteroid = function (options) {
-    options.color = "#abcdef"; //gray
+  var Ship = Asteroids.Ship = function (options) {
+    options.color = "#d3d3d3"; //gray
     options.radius = 10;
-    options.vel = Asteroids.Util.randomVec();
-  
+    options.vel = [0,0];
+    options.pos = [Asteroids.Game.DIM_X / 2 , Asteroids.Game.DIM_Y / 2];
+    
     Asteroids.movingObject.call(this, options)
     // any extra arguments after...
   };
   
-  Asteroids.Asteroid.inherits(Asteroids.movingObject);
+  Ship.inherits(Asteroids.movingObject);
 
   // Asteroid.Asteroids.Util.inherits(Asteroids.movingObject);
   // Asteroids.Util.inherits(Asteroid, Asteroids.movingObject);

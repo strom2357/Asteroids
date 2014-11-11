@@ -12,7 +12,7 @@
     var that = this;
     
     setInterval( function() {
-      that.game.move();
+      that.game.step();
       that.game.draw(that.ctx);
     }, 20); 
   };
